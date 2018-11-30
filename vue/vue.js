@@ -6,8 +6,8 @@ var app = new Vue({
 })
 
 Vue.component('todo-item', {
-    props: ['todo'],
-    template: '<li>{{ todo.text }}</li>'
+    props: ['item'],
+    template: '<li>{{ item.text }}</li>'
 })
 
 var app2 = new Vue({
@@ -19,4 +19,25 @@ var app2 = new Vue({
             { id: 2, text: '其他' }
         ]
     }
+})
+
+
+var obj = {
+    foo: 'bar'
+}
+
+//Object.freeze(obj)
+
+new Vue({
+    el: '#app1',
+    data: obj
+})
+
+var message = {
+    msg: 'hahahaha'
+}
+
+new Vue({
+    el: '#test',
+    data: message
 })
