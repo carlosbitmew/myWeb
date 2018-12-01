@@ -41,3 +41,26 @@ new Vue({
     el: '#test',
     data: message
 })
+
+var data= {
+    a:1
+}
+var vm = new Vue({
+    el: '#example',
+    data: data
+})
+
+vm.$data === data
+vm.$el === document.getElementById('example')
+vm.$watch('a',function(newValue, oldValue){
+    //回调在vm.a 改变后调用
+})
+
+var con = new Vue({
+    data:{
+        a: 1
+    },
+    fun: ()=>{
+        console.log("a is : "+ this.a)
+    }
+})
